@@ -1,0 +1,40 @@
+﻿@model Token.Models.account
+@{
+    ViewBag.Title = "Index";
+}
+    
+@Html.ActionLink("Admin", "ad_login", new { @class = "btn btn-link btn-success text-cneter col-sm-pull-9" })
+<h2>Login</h2>
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <div>
+        <fieldset>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.number)
+            </div>  
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.number, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.number)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.issue)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.issue, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.issue)
+            </div>
+           <br />
+            <input type="submit" value="Log In" class="btn col-sm-pull- pull-left btn-success  " />
+           @Html.ActionLink("Register new user", "Register", new { @class = "btn btn-link btn-success text-cneter col-sm-pull-9" }) 
+        </fieldset>
+    </div>
+}
+

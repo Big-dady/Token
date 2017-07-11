@@ -1,0 +1,29 @@
+﻿@model Token.Models.ad_login
+
+@{
+    ViewBag.Title = "ad_login";
+}
+
+<h2>Admin login</h2>
+<div>
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userid)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.userid, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.userid)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <input type="submit" onclick="" value="Log In" class="btn col-sm-pull- pull-left btn-success  " />
+       
+        @Html.ActionLink("User login", "Index", new { @class = "btn btn-link btn-success text-cneter col-sm-pull-9" })
+
+    </fieldset>
+</div>

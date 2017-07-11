@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "admin";
+}
+
+<h2>admin</h2>
+@try
+{
+
+    foreach (System.Data.DataRow dr in ViewBag.issue.Rows)
+    {
+        <tr>
+            <td>
+                @dr["number"].ToString()
+            </td>
+
+            <td>
+                @dr["issue"].ToString()
+            </td>
+            <td>
+                @Html.ActionLink("End Token", "Delete", new { id = dr["id"].ToString() })
+            </td>
+        </tr>
+    <br />
+    }
+    }
+catch 
+{
+    <tr>eexexe3</tr>}

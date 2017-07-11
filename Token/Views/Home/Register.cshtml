@@ -1,0 +1,41 @@
+﻿@model Token.Models.Register
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Get))
+{
+    <div>
+        <fieldset>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.number)
+            </div>
+            <div class  ="editor-field">
+                @Html.TextBoxFor(model => model.number, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.number)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.LabelFor(model => model.ConfirmPassword)
+                
+                    @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+                
+            </div>
+                <br />
+            <div>
+                <input type="submit" value="Register" class="btn col-sm-pull-11 pull-left btn-success  " />
+                @Html.ActionLink("Back to Login", "Index", new { @class = "btn btn-link btn-success text-cneter col-sm-pull-9" })
+                </div>
+</fieldset>
+    </div>
+}
